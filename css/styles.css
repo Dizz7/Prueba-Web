@@ -1,0 +1,180 @@
+@charset "utf-8"; /* Define la codificación del archivo como UTF-8 para soportar caracteres especiales */
+
+@import url('https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap');
+ /* Importa la fuente desde Google Fonts */
+
+ /* Aplica la fuente Raleway a todos los elementos */
+* {
+    font-family: 'Henny Penny', system-ui;
+}
+
+/* Establece propiedades generales del documento */
+html, body {
+    background-color: rgb(139, 182, 200); /* Fondo celeste */
+    color: rgb(36, 22, 22); /* Texto en color negro */
+    font-family: 'Henny Penny', system-ui;
+    margin: 0; /* Elimina márgenes */
+    padding: 0; /* Elimina padding */
+    text-align: center; /* Centra el texto */
+    display: flex; /* Hace que el cuerpo sea un contenedor flexible */
+    flex-direction: column; /* Organiza los elementos en columna */
+    min-height: 100vh; /* Ocupa al menos el 100% de la altura de la pantalla */
+    height: 100%;
+} 
+
+body {
+    padding-top: 90px; /* Añade espacio en la parte superior para que el contenido no quede oculto por el header */
+}
+
+/* Estilos del encabezado */
+header {
+    display: flex; /* Usa flexbox para organizar los elementos */
+    justify-content: space-between; /* Distribuye los elementos a los extremos */
+    align-items: center; /* Alinea los elementos verticalmente */
+    padding: 15px;
+    background-color: #222; /* Fondo oscuro */
+    position: fixed; /* Fija el encabezado en la parte superior */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+span {
+    color: white;
+    margin: 0 15px;
+}
+/* Ajusta la imagen dentro del header */
+header img {
+    height: 60px;
+}
+
+/* Estilos de la barra de navegación */
+nav {
+    margin-right: 2%;
+}
+nav a {
+    color: white;
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+/* Estilos de los subtítulos */
+h2 {
+    margin-top: 5%;
+    font-size: 1.6em;
+    color: #000000; /* Color negro */
+}
+
+/* Contenedor del logo */
+.logo_container { 
+    position: relative;
+    font-size: 1.3em; 
+}
+
+.logo_container span { 
+    position: absolute; 
+    top: 30%; 
+}
+
+
+/* Estilos del banner */
+.banner {
+    background: url('../img/banner.png') no-repeat center center/cover; /* Imagen de fondo */
+    height: 250px; /* Altura del banner */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+    flex-shrink: 0; /* Evita que el banner se reduzca */
+}
+
+.TextoBanner {
+    background-color: rgba(0, 0, 0); /* Fondo oscuro */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Contenedor de categorías */
+.categorias {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite que las categorías se ajusten en varias filas */
+    padding: 2% 0; /* Espaciado superior e inferior */
+}
+
+
+/* Estilos de cada categoría */
+.categoria {
+    margin: 15px;
+    width: 200px;
+    height: 250px; /* Asegura que el contenedor tenga suficiente altura para la imagen y el texto */
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* Organiza los elementos en una columna (imagen arriba, texto abajo) */
+    justify-content: flex-start; /* Alinea los elementos al principio */
+    text-align: center; /* Asegura que el texto esté centrado */
+}
+.categoria img {
+    width: 100%;
+    border-radius: 20px;
+    transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out; /* Agrega transición en hover */
+}
+
+/* Efecto hover: escala de grises y zoom */
+.categoria:hover img {
+    filter: grayscale(100%);
+    transform: scale(1.1);
+}
+.categoria h3 {
+    margin: 10px 0; /* Agrega margen superior e inferior para separar el texto de la imagen */
+    font-size: 1em;
+    color: #000; /* Cambia el color si es necesario */
+}
+
+/* Estilos del pie de página */
+footer {
+    background-color: #222; /* Fondo oscuro */
+    color: #bbb; /* Texto en gris claro */
+    text-align: center;
+    padding: 15px;
+    margin-top: auto;
+    margin-bottom: 0px;
+} 
+
+
+/* Contenedor del logo dentro del footer */
+.logo_container { 
+    align-items: center;
+    gap: 10px; /* Espaciado entre el logo y el texto */
+}
+
+.logo_container img {
+    max-width: 100px; /* Ajuste de tamaño máximo del logo */
+    height: auto;
+}
+
+.logo_container span {
+    font-size: 1.5em;
+    white-space: nowrap;
+}
+
+/* Estilos responsivos para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    .logo_container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .logo_container img {
+        max-width: 80px; /* Reduce el tamaño del logo en dispositivos pequeños */
+    }
+
+    .logo_container span {
+        font-size: 1.2em;
+    }
+}
